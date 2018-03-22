@@ -38,7 +38,7 @@
         <div style="text-align:center">
           <form class="form-inline justify-content-center" action="search.php" method="get" style="margin: 0px auto;">
             <label class="sr-only" for="channel">Channel Name</label>
-            <input name="channel" type="text" class="form-control mb-2 mr-sm-2" id="channel" value="UC27Bqjp8c1cTHcJEnwypkjQ">
+            <input name="channel" type="text" class="form-control mb-2 mr-sm-2" id="channel" placeholder="Channel ID here...">
             <button type="submit" class="btn mb-2">Begin Search!</button>
           </form>
         </div>

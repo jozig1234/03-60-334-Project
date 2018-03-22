@@ -5,7 +5,7 @@ $configs      = include('config.php');
 $API_key      = $configs['youtube_api'];
 
 $channelID     = $_GET['channel'];
-$maxResults   = 10;
+$maxResults   = 20;
 $youtubeURL = 'https://www.googleapis.com/youtube/v3/search?order=viewCount&part=snippet&channelId='.$channelID.'&maxResults='.$maxResults.'&key='.$API_key.'';
 
 $json = file_get_contents($youtubeURL);
