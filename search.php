@@ -1,10 +1,12 @@
 <?php
 //get videos from channel by youtube data API
 $API_key = 'AIzaSyDDq9Qa3La6UZNMkDURslDkbc4hjzMJ0TY';
-$channelID = 'UC9CuvdOVfMPvKCiwdGKL3cQ';
+$channelID = 'UCh0SxnImUvpWs_ZfEoyhkMA';
+$channelN = $_POST['channel'];
+
 
 $maxResults = 10;
-$videoList = json_decode(file_get_contents('https://www.googleapis.com/youtube/v3/search?order=date&part=snippet&channelId='.$channelID.'&maxResults='.$maxResults.'&key='.$API_key.''));
+$videoList = json_decode(file_get_contents('https://www.googleapis.com/youtube/v3/search?order=viewCount&part=snippet&channelId='.$channelID.'&maxResults='.$maxResults.'&key='.$API_key.''));
 
 ?>
 <!DOCTYPE html>
@@ -18,16 +20,12 @@ $videoList = json_decode(file_get_contents('https://www.googleapis.com/youtube/v
   <script src = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style type = "text/css">
   .container {
-    padding: 15px;
+    padding: 20px;
   }
   .youtube-video h2 {
     font-size: 16px;
   }
-  </style>
-
-</head>
-<style>
-.div {
+  .div {
     text-align: center;
     heigth: 100%;
     margin: 0 auto;
@@ -35,7 +33,9 @@ $videoList = json_decode(file_get_contents('https://www.googleapis.com/youtube/v
     border-radius: 4px;
     background-color: #f8f8f8;
 }
-</style>
+  </style>
+
+</head>
 <body>
 <div class = "div">
   <form action = "/search.php" method = "GET" >
